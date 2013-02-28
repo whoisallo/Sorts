@@ -14,7 +14,7 @@ class Sorts {
 	 * @param  min - the min for the randomly selected numbers
 	 * @param  max - the max for the randomly selected numbers
 	 */
-	public int[] randomArray(int length, int min, int max) {
+	public static int[] randomArray(int length, int min, int max) {
 		int[] answer = new int[length];
 		for(int i = 0; i < length; i++) {
 			answer[i] = min + (int)(Math.random() * ((max - min) + 1));
@@ -29,10 +29,13 @@ class Sorts {
 	 *
 	 * @param thingy - the array to print
 	 */
-	public void print(int[] thingy) {
+	public static void print(int[] thingy) {
 		System.out.print("[");
 		for(int i = 0; i < thingy.length; i++) {
-			System.out.print(thingy[i]+", ");
+			System.out.print(thingy[i]);
+			if(i!=thingy.length-1) {
+				System.out.print(",");
+			}
 		}
 		System.out.print("]");
 	}
@@ -44,8 +47,9 @@ class Sorts {
 	 */
 	
 	public static void main(String[] args) {
-		int[] thingyToPrint = randomArray(4, 2, 6);
+		int[] thingyToPrint = randomArray(10, 2, 6);
 		print(thingyToPrint);
+		System.out.println();
 	}
 }
 
