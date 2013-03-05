@@ -51,8 +51,9 @@ class Sorts {
 	 * insertionSort
 	 */
 	public static int[] insertionSort(int[] rand) {
-		for(int i = rand.length-1; i >0; i++) {
-			
+		for(int i = 0; i < rand.length) {
+			int a = i;
+			while(rand[a])
 		}
 	}
 
