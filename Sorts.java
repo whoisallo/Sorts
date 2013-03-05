@@ -44,17 +44,30 @@ class Sorts {
 	 * bubbleSort
 	 */
 	public static int[] bubbleSort(int[] rand) {
-		
+		int temp = 0;
+		boolean switchcount = true;
+		while(switchcount) {
+			switchcount = false;
+			for( int i = 0; i < rand.length-1; i++) {
+				if(rand[i]>rand[i+1]) {
+					switchcount = true;
+					temp = rand[i];
+					rand[i] = rand[i+1];
+					rand[i+1] = temp;
+				}
+			}
+		}
+		return rand;
 	}
 
 	/**
 	 * insertionSort
 	 */
 	public static int[] insertionSort(int[] rand) {
-		for(int i = 0; i < rand.length) {
-			int a = i;
-			while(rand[a])
+		for(int i = 0; i < rand.length; i++) {
+
 		}
+		return rand;
 	}
 
 	/**
@@ -86,8 +99,12 @@ class Sorts {
 	 */
 	
 	public static void main(String[] args) {
-		int[] thingyToPrint = randomArray(100000, 0, 1);
+		int[] random = randomArray(10, 0, 10);
+		print(random);
+		int[] thingyToPrint = bubbleSort(random);
 		//thingyToPrint = sortArray(thingy);
+		
+		System.out.println();
 		print(thingyToPrint);
 		System.out.println();
 	}
